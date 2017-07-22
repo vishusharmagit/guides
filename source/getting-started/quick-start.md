@@ -140,9 +140,9 @@ We'll take the code created for us by the generator and add a `model()`
 method to the `Route`:
 
 ```app/routes/scientists.js{+4,+5,+6}
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
+export default Route.extend({
   model() {
     return ['Marie Curie', 'Mae Jemison', 'Albert Hofmann'];
   }
@@ -275,9 +275,9 @@ In the component, add an `actions` object with a `showPerson` function that
 alerts the first argument.
 
 ```app/components/people-list.js{+4,+5,+6,+7,+8}
-import Ember from 'ember';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   actions: {
     showPerson(person) {
       alert(person);
