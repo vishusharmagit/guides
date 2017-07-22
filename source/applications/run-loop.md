@@ -63,10 +63,15 @@ Essentially, batching similar work allows for better pipelining, and further opt
 Let's look at a similar example that is optimized in Ember, starting with a `User` object:
 
 ```javascript
-let User = Ember.Object.extend({
+import EmberObject, {
+  computed
+} from '@ember/object';
+
+let User = EmberObject.extend({
   firstName: null,
   lastName: null,
-  fullName: Ember.computed('firstName', 'lastName', function() {
+
+  fullName: computed('firstName', 'lastName', function() {
     return `${this.get('firstName')} ${this.get('lastName')}`;
   })
 });
