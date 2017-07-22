@@ -33,9 +33,9 @@ Given the above template, you can now use the `{{blog-post}}` component:
 Its model is populated in `model` hook in the route handler:
 
 ```app/routes/index.js
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
+export default Route.extend({
   model() {
     return this.get('store').findAll('post');
   }
@@ -58,7 +58,7 @@ the Handlebars template as described above and use the component that is
 created.
 
 If you need to customize the behavior of the component you'll
-need to define a subclass of [`Ember.Component`][1]. For example, you would
+need to define a subclass of [`Component`][1]. For example, you would
 need a custom subclass if you wanted to change a component's element,
 respond to actions from the component's template, or manually make
 changes to the component's element using JavaScript.
@@ -100,9 +100,9 @@ means of choosing different components for displaying different kinds of posts:
 ```
 
 ```app/routes/index.js
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
+export default Route.extend({
   model() {
     return this.get('store').findAll('post');
   }

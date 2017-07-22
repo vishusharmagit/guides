@@ -60,9 +60,9 @@ you can use `didUpdateAttrs` to clear any error state that was built up from edi
 ```
 
 ```/app/components/profile-editor.js
-import Ember from 'ember';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   init() {
     this._super(...arguments);
     this.errors = [];
@@ -95,9 +95,9 @@ For example, if you have a component that renders based on a json configuration,
 you can leverage `didReceiveAttrs` to ensure the incoming config is always parsed.
 
 ```app/components/profile-editor.js
-import Ember from 'ember';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   didReceiveAttrs() {
     this._super(...arguments);
     const profile = this.get('data');
@@ -230,10 +230,10 @@ When rendered the component will iterate through the given list and apply a clas
 
 The scroll happens on `didRender`, where it will scroll the component's container to the element with the selected class name.
 
-```app/components/selected-item-list.js
-import Ember from 'ember';
+```/app/components/selected-item-list.js
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['item-list'],
 
   didReceiveAttrs() {
